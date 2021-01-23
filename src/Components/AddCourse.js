@@ -52,7 +52,7 @@ const AddCourse=()=>{
       <FormGroup row>
         <Label for="courseDes" sm={2}>Course Description</Label>
         <Col sm={10}>
-          <Input type="textarea" name="courseDes" id="courseDes" />
+          <Input type="textarea" name="courseDes" id="courseDes" onChange={(e)=>{setCourse({...course,courseDescription:e.target.value})}}/>
         </Col>
       </FormGroup>
       <FormGroup check row>
