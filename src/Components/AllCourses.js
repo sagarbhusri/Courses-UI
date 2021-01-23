@@ -32,10 +32,13 @@ const AllCourses=()=>{
     const updateCourses=(id)=>{
         setCourses(courses.filter((e)=> e.courseID!==id ))
     };
+    const addCourse=(course)=>{
+        setCourses(courses.filter((e)=> (e.courseID===course.courseID ? (e.courseTitle=course.courseTitle) && (e.courseDescription=course.courseDescription) : e) ))
+    }
     return(
         <div>
                 {courses.length > 0 
-                ? courses.map((item)=><Course course={item} update={updateCourses} />) 
+                ? courses.map((item)=><Course course={item} update={updateCourses} add={addCourse} />) 
                 : "no courses"}
         </div>
             
